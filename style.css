@@ -18,12 +18,29 @@
     --accent-dim: #93c5fd;
     --tag-bg: #f1f5f9;
     --tag-text: #334155;
+    --nav-bg: rgba(249, 249, 247, .88);
     --radius: 12px;
     --radius-sm: 8px;
     --shadow: 0 1px 3px rgba(0, 0, 0, .07), 0 4px 16px rgba(0, 0, 0, .05);
     --shadow-hover: 0 4px 20px rgba(37, 99, 235, .12);
     --transition: 0.25s ease;
     --nav-h: 64px;
+}
+
+[data-theme="dark"] {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --border: #334155;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-light: rgba(59, 130, 246, 0.1);
+    --accent-dim: #1d4ed8;
+    --tag-bg: #1e293b;
+    --tag-text: #cbd5e1;
+    --nav-bg: rgba(15, 23, 42, 0.88);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -37,6 +54,7 @@ body {
     line-height: 1.65;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ── Nav ──────────────────────────────────────────────────── */
@@ -47,10 +65,10 @@ body {
     right: 0;
     z-index: 100;
     height: var(--nav-h);
-    background: rgba(249, 249, 247, .88);
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid transparent;
-    transition: border-color var(--transition), box-shadow var(--transition);
+    transition: border-color var(--transition), box-shadow var(--transition), background-color 0.3s ease;
 }
 
 .nav.scrolled {
@@ -158,7 +176,8 @@ body {
 }
 
 .hero-bio {
-    color: #374151;
+    color: var(--text);
+    opacity: 0.85;
     font-size: .97rem;
     line-height: 1.75;
     margin-bottom: 32px;
@@ -680,6 +699,50 @@ body {
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ── Theme Toggle ─────────────────────────────────────────── */
+.theme-toggle {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition);
+    margin-left: 8px;
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .moon-icon {
+    display: none;
+}
+
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    display: block;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

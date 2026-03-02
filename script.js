@@ -48,4 +48,21 @@ const sectionObserver = new IntersectionObserver(
   { rootMargin: '-40% 0px -55% 0px' }
 );
 
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+const getTheme = () => localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+const setTheme = (theme) => {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+};
+
+setTheme(getTheme());
+
+themeToggle.addEventListener('click', () => {
+  const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+});
+
 sections.forEach(s => sectionObserver.observe(s));
