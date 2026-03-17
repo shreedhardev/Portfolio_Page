@@ -48,22 +48,7 @@ const sectionObserver = new IntersectionObserver(
   { rootMargin: '-40% 0px -55% 0px' }
 );
 
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-const html = document.documentElement;
 
-const getTheme = () => localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-const setTheme = (theme) => {
-  html.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-};
-
-setTheme(getTheme());
-
-themeToggle.addEventListener('click', () => {
-  const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  setTheme(newTheme);
-});
 
 // Typing Effect
 const typingText = document.getElementById('typing-text');
@@ -114,7 +99,8 @@ tiltEls.forEach(el => {
     const yc = rect.height / 2;
     const dx = x - xc;
     const dy = y - yc;
-    el.style.transform = `perspective(1000px) rotateY(${dx / 20}deg) rotateX(${-dy / 20}deg) translateY(-2px)`;
+    // Disabled for 2D retro feel
+    // el.style.transform = `perspective(1000px) rotateY(${dx / 20}deg) rotateX(${-dy / 20}deg) translateY(-2px)`;
   });
 
   el.addEventListener('mouseleave', () => {
@@ -129,11 +115,11 @@ buttons.forEach(btn => {
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    // Disabled magnetic sliding to prefer blocky CSS hover
   });
 
   btn.addEventListener('mouseleave', () => {
-    btn.style.transform = '';
+    // hover cleared via css
   });
 });
 
