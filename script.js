@@ -1,129 +1,199 @@
-// Sticky nav shadow on scroll
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 10);
-});
+/**
+ * Shreedhar G D – Modern Junior Developer Portfolio
+ * Vanilla JavaScript for UI Interactions & Accessibility
+ */
 
-// Scroll reveal
-const revealEls = document.querySelectorAll(
-  '.edu-card, .skill-card, .timeline-card, .achieve-card, .contact-card, .hero-content, .hero-visual'
-);
+document.addEventListener('DOMContentLoaded', () => {
+  // ── 1. Dynamic Year ────────────────────────────────────────────────────────
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-revealEls.forEach(el => el.classList.add('reveal'));
+  // ── 2. Sticky Navbar Blur & Shadow on Scroll ──────────────────────────────
+  const navbar = document.getElementById('navbar');
+  const handleScroll = () => {
+    if (window.scrollY > 16) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
+  // ── 3. Mobile Navigation Menu ─────────────────────────────────────────────
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-revealEls.forEach(el => observer.observe(el));
+  if (navToggle && navMenu) {
+    const toggleMenu = (open) => {
+      const isOpen = open !== undefined ? open : !navMenu.classList.contains('open');
+      navMenu.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen && window.innerWidth <= 768 ? 'hidden' : '';
+    };
 
-// Smooth active nav link highlight
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+    navToggle.addEventListener('click', () => toggleMenu());
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const id = e.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.style.color = '';
-          link.style.fontWeight = '';
-        });
-        const active = document.querySelector(`.nav-links a[href="#${id}"]`);
-        if (active && !active.classList.contains('nav-cta')) {
-          active.style.color = 'var(--accent)';
+    // Close mobile nav when clicking any nav link
+    const navLinks = navMenu.querySelectorAll('.nav-link');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          toggleMenu(false);
         }
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        toggleMenu(false);
+        navToggle.focus();
       }
     });
-  },
-  { rootMargin: '-40% 0px -55% 0px' }
-);
 
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (
+        navMenu.classList.contains('open') &&
+        !navMenu.contains(e.target) &&
+        !navToggle.contains(e.target)
+      ) {
+        toggleMenu(false);
+      }
+    });
+  }
 
+  // ── 4. Active Navigation Link Highlighting ─────────────────────────────────
+  const sections = document.querySelectorAll('main section[id]');
+  const allNavLinks = document.querySelectorAll('.nav-link');
 
-// Typing Effect
-const typingText = document.getElementById('typing-text');
-const phrases = ['Full Stack Developer', 'Software Engineer', 'Cloud Engineer', 'Cricketer'];
-let phraseIdx = 0;
-let charIdx = 0;
-let isDeleting = false;
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            allNavLinks.forEach((link) => {
+              const href = link.getAttribute('href');
+              if (href === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-30% 0px -60% 0px',
+        threshold: 0,
+      }
+    );
 
-function type() {
-  const currentPhrase = phrases[phraseIdx];
-  if (isDeleting) {
-    typingText.textContent = currentPhrase.substring(0, charIdx - 1);
-    charIdx--;
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+
+  // ── 5. Scroll-Reveal Animations ───────────────────────────────────────────
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealElements = document.querySelectorAll('.reveal');
+
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
   } else {
-    typingText.textContent = currentPhrase.substring(0, charIdx + 1);
-    charIdx++;
+    // If reduced motion is preferred or IntersectionObserver not available, show immediately
+    revealElements.forEach((el) => el.classList.add('visible'));
   }
 
-  let typeSpeed = isDeleting ? 50 : 100;
-
-  if (!isDeleting && charIdx === currentPhrase.length) {
-    isDeleting = true;
-    typeSpeed = 2000; // Pause at end
-  } else if (isDeleting && charIdx === 0) {
-    isDeleting = false;
-    phraseIdx = (phraseIdx + 1) % phrases.length;
-    typeSpeed = 500;
+  // ── 6. Copy Email to Clipboard ────────────────────────────────────────────
+  const copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    const originalText = copyBtn.textContent;
+    copyBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const email = 'shreenikkil@gmail.com';
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          // Fallback
+          const textArea = document.createElement('textarea');
+          textArea.value = email;
+          textArea.style.position = 'fixed';
+          textArea.style.left = '-999999px';
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          document.execCommand('copy');
+          textArea.remove();
+        }
+        copyBtn.textContent = 'Copied!';
+        copyBtn.style.color = 'var(--accent-primary)';
+        copyBtn.style.borderColor = 'var(--border-accent)';
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+          copyBtn.style.color = '';
+          copyBtn.style.borderColor = '';
+        }, 2200);
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    });
   }
 
-  setTimeout(type, typeSpeed);
-}
+  // ── 7. Contact Form Handling ──────────────────────────────────────────────
+  const contactForm = document.getElementById('portfolio-contact-form');
+  const formFeedback = document.getElementById('form-feedback');
 
-// Cursor Glow
-const glow = document.getElementById('cursor-glow');
-document.addEventListener('mousemove', (e) => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
+  if (contactForm && formFeedback) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email-input').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+
+      if (!name || !email || !message) {
+        return;
+      }
+
+      // Friendly success response
+      formFeedback.className = 'form-feedback success';
+      formFeedback.innerHTML = `
+        <strong>Thank you, ${name}!</strong> Your message has been prepared. Opening your default mail client to deliver directly to <em>shreenikkil@gmail.com</em>...
+      `;
+
+      // Open user's mail client with pre-filled content
+      const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+      const body = encodeURIComponent(
+        `Hi Shreedhar,\n\n${message}\n\nBest regards,\n${name}\nEmail: ${email}`
+      );
+      window.location.href = `mailto:shreenikkil@gmail.com?subject=${subject}&body=${body}`;
+
+      // Reset form
+      contactForm.reset();
+
+      setTimeout(() => {
+        formFeedback.style.display = 'none';
+      }, 6000);
+    });
+  }
 });
-
-// Tilt Effect
-const tiltEls = document.querySelectorAll('.edu-card, .skill-card, .timeline-card, .achieve-card');
-tiltEls.forEach(el => {
-  el.addEventListener('mousemove', (e) => {
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const xc = rect.width / 2;
-    const yc = rect.height / 2;
-    const dx = x - xc;
-    const dy = y - yc;
-    // Disabled for 2D retro feel
-    // el.style.transform = `perspective(1000px) rotateY(${dx / 20}deg) rotateX(${-dy / 20}deg) translateY(-2px)`;
-  });
-
-  el.addEventListener('mouseleave', () => {
-    el.style.transform = '';
-  });
-});
-
-// Magnetic Buttons
-const buttons = document.querySelectorAll('.btn, .theme-toggle, .contact-card');
-buttons.forEach(btn => {
-  btn.addEventListener('mousemove', (e) => {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    // Disabled magnetic sliding to prefer blocky CSS hover
-  });
-
-  btn.addEventListener('mouseleave', () => {
-    // hover cleared via css
-  });
-});
-
-// Start effects
-type();
-
-sections.forEach(s => sectionObserver.observe(s));
