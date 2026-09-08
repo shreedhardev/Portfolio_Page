@@ -2,279 +2,803 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shreedhar G D – Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Shreedhar G D – Software Engineer, Full Stack Developer specializing in .NET, JavaScript, and Cloud technologies." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreedhar G D – Junior Software Developer</title>
+  <meta name="description"
+    content="Portfolio of Shreedhar G D – Junior Software Developer specializing in .NET, TypeScript/JavaScript, RESTful APIs, and AWS Cloud technologies." />
+  <meta name="keywords"
+    content="Shreedhar G D, Software Developer, Junior Developer, Full Stack Developer, .NET, React, TypeScript, AWS, Portfolio" />
+  <meta name="author" content="Shreedhar G D" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shreedhar G D – Junior Software Developer" />
+  <meta property="og:description"
+    content="Junior Software Developer building clean, reliable, and user-focused web applications with .NET, JavaScript, and Cloud technologies." />
+  <meta property="og:url" content="https://shreedhardev.github.io/Portfolio_Page/" />
+
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- CRT EFFECTS -->
-    <div class="scanlines"></div>
-    <div class="vignette"></div>
+  <!-- ── 1. NAVIGATION ─────────────────────────────────────────────────────── -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <div class="container nav-container">
+        <a href="#hero" class="nav-brand" id="nav-brand" aria-label="Shreedhar G D Home">
+          <span>Shreedhar G D</span>
+          <span class="brand-badge">SGD.dev</span>
+        </a>
 
-    <!-- CURSOR GLOW -->
-    <div class="cursor-glow" id="cursor-glow"></div>
+        <ul class="nav-menu" id="nav-menu" role="menubar">
+          <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+          <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+          <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+          <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+          <li role="none"><a href="#activity" class="nav-link" role="menuitem">Activity</a></li>
+          <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+        </ul>
 
-    <!-- NAV -->
-    <nav class="nav" id="navbar">
-        <div class="nav-inner">
-            <span class="nav-logo">SGD</span>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
-            </ul>
+        <div class="nav-actions">
+          <a href="mailto:shreenikkil@gmail.com?subject=Opportunity%20Inquiry%20from%20Portfolio" class="btn btn-primary btn-sm" id="nav-resume-btn">
+            Get in Touch
+          </a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
+      </div>
     </nav>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero" id="about">
-        <div class="hero-content">
-            <div class="hero-badge">Software Engineer</div>
-            <h1 class="hero-name">Shreedhar <strong style="color: #ff0000;">G D</strong></h1>
-            <p class="hero-tagline" id="typing-text">Full Stack Developer</p>
-            <p class="hero-bio">
-                Software Engineer at <strong style="color: #F37021;">LTM</strong>, building scalable insurance
-                enterprise applications with .NET, JavaScript, RESTful APIs, and cloud-native microservices. Passionate
-                about clean code and automation.
+  <main>
+    <!-- ── 2. HERO SECTION ───────────────────────────────────────────────────── -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="status-pill">
+              <span class="status-indicator"></span>
+              <span>Junior Software Developer · Full Stack &amp; Cloud</span>
+            </div>
+
+            <h1 class="hero-title">
+              I build clean, reliable, and <span class="hero-highlight">user-focused</span> web experiences.
+            </h1>
+
+            <p class="hero-lead">
+              Hi, I’m <strong>Shreedhar G D</strong>. Software Engineer at <strong>LTI Mindtree</strong>, specializing in .NET, JavaScript/TypeScript, RESTful APIs, and cloud infrastructure.
             </p>
-            <div class="hero-links">
-                <a href="https://github.com/shreedhardev" target="_blank" rel="noopener" class="btn btn-outline"
-                    id="github-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-1.92c-3.19.69-3.86-1.54-3.86-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.13v3.16c0 .3.2.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-                    </svg>
-                    GitHub
+
+            <p class="hero-description">
+              Passionate about clean architecture, microservices, automated CI/CD deployments, and writing maintainable code that solves real business problems.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
+                <span>View Featured Projects</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="mailto:shreenikkil@gmail.com?subject=Resume%20Request%20-%20Shreedhar%20G%20D" class="btn btn-secondary" id="hero-cta-resume">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Request Resume</span>
+              </a>
+
+              <div class="hero-socials" aria-label="Social and developer links">
+                <a href="https://github.com/shreedhardev" target="_blank" rel="noopener noreferrer" class="social-link" id="hero-github" aria-label="GitHub Profile">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/shreedhar-g-d-967b26201/" target="_blank" rel="noopener"
-                    class="btn btn-outline" id="linkedin-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.57V9H3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.23 0z" />
-                    </svg>
-                    LinkedIn
+                <a href="https://www.linkedin.com/in/shreedhar-g-d-967b26201/" target="_blank" rel="noopener noreferrer" class="social-link" id="hero-linkedin" aria-label="LinkedIn Profile">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.57V9H3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.23 0z" />
+                  </svg>
                 </a>
-                <a href="https://leetcode.com/u/shreenikkil/" target="_blank" rel="noopener" class="btn btn-outline"
-                    id="leetcode-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
-                    </svg>
-                    LeetCode
+                <a href="https://leetcode.com/u/shreenikkil/" target="_blank" rel="noopener noreferrer" class="social-link" id="hero-leetcode" aria-label="LeetCode Profile">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+                  </svg>
                 </a>
+              </div>
             </div>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-            <div class="avatar-ring">
-                <div class="avatar">SGD</div>
+          </div>
+
+          <!-- Hero Developer Visual Element -->
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="terminal-card">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="terminal-title">shreedhar.config.ts</div>
+                <div class="status-badge-inline">Active in Production</div>
+              </div>
+              <div class="terminal-body">
+                <span class="code-comment">// Developer Profile Summary</span><br />
+                <span class="code-keyword">const</span> developer = {<br />
+                &nbsp;&nbsp;<span class="code-prop">name</span>: <span class="code-string">"Shreedhar G D"</span>,<br />
+                &nbsp;&nbsp;<span class="code-prop">role</span>: <span class="code-string">"Junior Software Developer"</span>,<br />
+                &nbsp;&nbsp;<span class="code-prop">company</span>: <span class="code-string">"LTI Mindtree"</span>,<br />
+                &nbsp;&nbsp;<span class="code-prop">education</span>: <span class="code-string">"B.E. (PSG iTech, 8.63 CGPA)"</span>,<br />
+                &nbsp;&nbsp;<span class="code-prop">coreStack</span>: [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">".NET / C#"</span>, <span class="code-string">"TypeScript"</span>, <span class="code-string">"React"</span>,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"RESTful APIs"</span>, <span class="code-string">"AWS"</span>, <span class="code-string">"Terraform"</span><br />
+                &nbsp;&nbsp;],<br />
+                &nbsp;&nbsp;<span class="code-prop">openToOpportunities</span>: <span class="code-keyword">true</span><br />
+                };
+              </div>
+              <div class="terminal-footer-meta">
+                <span>📍 Coimbatore / Bangalore, India</span>
+                <span>⚡ CI/CD efficiency +80%</span>
+              </div>
             </div>
-            <div class="float-tag tag-1">.NET</div>
-            <div class="float-tag tag-2">React</div>
-            <div class="float-tag tag-3">AWS</div>
-            <div class="float-tag tag-4">Go</div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="edu-card">
-                <div class="edu-icon">🎓</div>
-                <div class="edu-info">
-                    <h3>PSG Institute of Technology and Applied Research</h3>
-                    <p class="edu-sub">Bachelor of Engineering in Electronics and Communication Engineering</p>
-                    <div class="edu-meta">
-                        <span class="badge">CGPA: 8.63</span>
-                        <span class="badge">Class of 2024</span>
-                        <span class="edu-location">Coimbatore</span>
-                    </div>
-                </div>
-            </div>
+    <!-- ── 3. ABOUT SECTION ─────────────────────────────────────────────────── -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Driven by clean code, scalability, and practical problem solving.</h2>
+          <p class="section-desc">A snapshot of my professional background, engineering foundation, and approach to modern software development.</p>
         </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I am a <strong>Junior Software Developer</strong> currently contributing to enterprise-grade insurance applications at <strong>LTI Mindtree</strong>. My primary work revolves around engineering resilient microservices, writing reliable backend APIs with <strong>.NET</strong>, and implementing responsive frontend components.
+            </p>
+            <p>
+              I take pride in writing readable, maintainable, and well-tested code. Beyond everyday feature delivery, I am deeply interested in <strong>DevOps automation</strong>—building automated CI/CD pipelines with AWS and Terraform that reduce deployment friction and eliminate manual errors.
+            </p>
+            <p>
+              Graduating with an Engineering degree from <strong>PSG Institute of Technology and Applied Research</strong> (8.63 CGPA), I bring structured analytical problem-solving to every project, whether optimizing enterprise API latencies or building AI agents for financial risk assessment.
+            </p>
+          </div>
+
+          <div class="about-cards-list reveal">
+            <div class="info-card">
+              <div class="info-card-icon">💼</div>
+              <div class="info-card-content">
+                <h3>Enterprise Experience</h3>
+                <p>Developing scalable insurance quote issuance and policy management software in agile cross-functional teams at LTI Mindtree.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">🎓</div>
+              <div class="info-card-content">
+                <h3>Strong Academic Foundation</h3>
+                <p>Bachelor of Engineering from PSG iTech with an 8.63 CGPA, grounding my practical work in algorithms, computing, and electronics.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-icon">🚀</div>
+              <div class="info-card-content">
+                <h3>Continuous Technical Growth</h3>
+                <p>Regular practice on LeetCode, contributing to open-source tools, and exploring agentic AI frameworks and cloud automation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section section-alt" id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-
-                <div class="skill-card" id="skill-languages">
-                    <div class="skill-icon">⌨️</div>
-                    <h3>Languages</h3>
-                    <div class="tags">
-                        <span class="tag">C++</span>
-                        <span class="tag">C#</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Go</span>
-                    </div>
-                </div>
-
-                <div class="skill-card" id="skill-frontend">
-                    <div class="skill-icon">🖥️</div>
-                    <h3>Frontend</h3>
-                    <div class="tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Angular</span>
-                        <span class="tag">Vue</span>
-                        <span class="tag">Svelte</span>
-                        <span class="tag">TailwindCSS</span>
-                        <span class="tag">Redux</span>
-                        <span class="tag">D3.js</span>
-                    </div>
-                </div>
-
-                <div class="skill-card" id="skill-backend">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend</h3>
-                    <div class="tags">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">.NET</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">REST APIs</span>
-                    </div>
-                </div>
-
-                <div class="skill-card" id="skill-db">
-                    <div class="skill-icon">🗄️</div>
-                    <h3>Databases</h3>
-                    <div class="tags">
-                        <span class="tag">PostgreSQL</span>
-                    </div>
-                </div>
-
-            </div>
+    <!-- ── 4. TECHNICAL SKILLS SECTION ──────────────────────────────────────── -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Skills &amp; Technologies</span>
+          <h2 class="section-title">Curated Technical Stack</h2>
+          <p class="section-desc">Technologies and tools I work with across production enterprise environments and personal software projects.</p>
         </div>
+
+        <div class="skills-grid">
+          <!-- Languages -->
+          <div class="skill-category-card reveal" id="skill-languages">
+            <div class="skill-category-header">
+              <div class="skill-category-icon">⌨️</div>
+              <h3>Programming Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Go</span>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-category-card reveal" id="skill-frontend">
+            <div class="skill-category-header">
+              <div class="skill-category-icon">🖥️</div>
+              <h3>Frontend Development</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">HTML5 / Semantic UI</span>
+              <span class="skill-tag">CSS3 / Vanilla CSS</span>
+              <span class="skill-tag">TailwindCSS</span>
+              <span class="skill-tag">Redux Toolkit</span>
+              <span class="skill-tag">Responsive Design</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-category-card reveal" id="skill-backend">
+            <div class="skill-category-header">
+              <div class="skill-category-icon">⚙️</div>
+              <h3>Backend &amp; Architecture</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">.NET / ASP.NET Core</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">RESTful APIs</span>
+              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag">OOP &amp; Design Patterns</span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-category-card reveal" id="skill-databases">
+            <div class="skill-category-header">
+              <div class="skill-category-icon">🗄️</div>
+              <h3>Databases &amp; Storage</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Microsoft SQL Server</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">Entity Framework Core</span>
+              <span class="skill-tag">Data Modeling</span>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="skill-category-card reveal" id="skill-cloud">
+            <div class="skill-category-header">
+              <div class="skill-category-icon">☁️</div>
+              <h3>Cloud &amp; DevOps</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Amazon Web Services (AWS)</span>
+              <span class="skill-tag">Terraform (IaC)</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CI/CD Pipelines</span>
+              <span class="skill-tag">Git &amp; GitHub Actions</span>
+            </div>
+          </div>
+
+          <!-- Tools & Practices -->
+          <div class="skill-category-card reveal" id="skill-tools">
+            <div class="skill-category-header">
+              <div class="skill-category-icon">🛠️</div>
+              <h3>Tools &amp; Practices</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Agile / Scrum</span>
+              <span class="skill-tag">Postman / API Testing</span>
+              <span class="skill-tag">Visual Studio / VS Code</span>
+              <span class="skill-tag">Linux / Bash</span>
+              <span class="skill-tag">Clean Architecture</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- ── 5. FEATURED PROJECTS SECTION ────────────────────────────────────── -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Projects with Real-World Focus</h2>
+          <p class="section-desc">A selection of applications and tools I’ve designed, built, and open-sourced, highlighting problem solving and technical implementation.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Investment Portfolio AI Agent -->
+          <div class="project-card reveal" id="project-investment-ai">
+            <div class="project-preview">
+              <div class="project-preview-top">
+                <span class="project-badge">AI &amp; FinTech</span>
+                <span class="project-type-indicator">Python · ReAct Framework</span>
+              </div>
+              <div class="project-visual-mockup">
+                <div class="mockup-icon">📈</div>
+                <div class="mockup-text">
+                  <div class="mockup-title">Investment Risk Assessment Agent</div>
+                  <div class="mockup-meta">Groq API · ReAct Decision Engine</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Investment Portfolio AI Agent</h3>
+              <p class="project-summary">
+                An intelligent financial risk analysis system that utilizes the ReAct (Reason + Act) autonomous agent framework to evaluate portfolio volatility and market exposure.
+              </p>
+
+              <div class="project-problem-box">
+                <h4>Problem Solved</h4>
+                <p>Retail investors often struggle to evaluate complex portfolio risk factors across diverse assets without expensive terminal tools.</p>
+              </div>
+
+              <ul class="project-features">
+                <li>Automated multi-step financial risk assessment via <strong>Groq API</strong> inference.</li>
+                <li>Dynamic query engine reasoning through portfolio asset weights and historical volatility.</li>
+                <li>Generates clear, structured risk factor breakdowns and rebalancing recommendations.</li>
+              </ul>
+
+              <div class="project-tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">ReAct Framework</span>
+                <span class="tech-badge">Groq API</span>
+                <span class="tech-badge">Financial APIs</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="https://github.com/shreedhardev/Investment-Portfolio-AI-Agent" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-project-ai-repo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Smart Team Retro -->
+          <div class="project-card reveal" id="project-smart-retro">
+            <div class="project-preview">
+              <div class="project-preview-top">
+                <span class="project-badge">Collaboration Tool</span>
+                <span class="project-type-indicator">TypeScript · React</span>
+              </div>
+              <div class="project-visual-mockup">
+                <div class="mockup-icon">🔄</div>
+                <div class="mockup-text">
+                  <div class="mockup-title">Smart Agile Team Retrospective</div>
+                  <div class="mockup-meta">Sprint Feedback &amp; Action Items</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Smart Team Retro</h3>
+              <p class="project-summary">
+                A collaborative web platform tailored for Agile engineering teams to facilitate sprint retrospectives, feedback prioritization, and continuous process improvements.
+              </p>
+
+              <div class="project-problem-box">
+                <h4>Problem Solved</h4>
+                <p>Distributed development teams often struggle with disengaged retrospective meetings and lost action items between sprint cycles.</p>
+              </div>
+
+              <ul class="project-features">
+                <li>Structured retro boards (Went Well, To Improve, Action Items) with clean interaction.</li>
+                <li>Live upvoting mechanism to prioritize team discussion topics collaboratively.</li>
+                <li>Exportable action item checklists ensuring accountability across sprint planning.</li>
+              </ul>
+
+              <div class="project-tech-stack">
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">CSS Modules</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="https://github.com/shreedhardev/smart-team-retro" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-project-retro-repo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Jewel Billing Enterprise App -->
+          <div class="project-card reveal" id="project-jewel-billing">
+            <div class="project-preview">
+              <div class="project-preview-top">
+                <span class="project-badge">Commercial System</span>
+                <span class="project-type-indicator">JavaScript · HTML5 · CSS3</span>
+              </div>
+              <div class="project-visual-mockup">
+                <div class="mockup-icon">💎</div>
+                <div class="mockup-text">
+                  <div class="mockup-title">Jewel Billing &amp; Invoicing App</div>
+                  <div class="mockup-meta">Real-Time Gold Rates &amp; GST Invoicing</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Jewel Billing Enterprise Application</h3>
+              <p class="project-summary">
+                A point-of-sale invoice generation and commercial tax billing application designed specifically for retail jewelry operations and gold merchants.
+              </p>
+
+              <div class="project-problem-box">
+                <h4>Problem Solved</h4>
+                <p>Retail jewelry shops struggle with complex manual math involving fluctuating metal market rates, wastage rates, stone weights, and statutory tax breakdowns.</p>
+              </div>
+
+              <ul class="project-features">
+                <li>Automated formula computation accounting for gross weight, net purity, making charges, and GST.</li>
+                <li>Real-time invoice generation and printer-ready tax receipt formatting.</li>
+                <li>Client-side data persistence with responsive layout suited for retail counters.</li>
+              </ul>
+
+              <div class="project-tech-stack">
+                <span class="tech-badge">JavaScript (ES6+)</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">Client Storage</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="https://github.com/shreedhardev/Jewel_Billing_App" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-project-jewel-repo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Brain Tumor Detection -->
+          <div class="project-card reveal" id="project-brain-tumor">
+            <div class="project-preview">
+              <div class="project-preview-top">
+                <span class="project-badge">Deep Learning</span>
+                <span class="project-type-indicator">Python · TensorFlow</span>
+              </div>
+              <div class="project-visual-mockup">
+                <div class="mockup-icon">🧠</div>
+                <div class="mockup-text">
+                  <div class="mockup-title">Brain Tumor Detection &amp; Classification</div>
+                  <div class="mockup-meta">CNN · Computer Vision · MRI Analysis</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Brain Tumor Detection &amp; Classification</h3>
+              <p class="project-summary">
+                A computer vision and deep learning pipeline designed to automatically detect and classify brain tumors from clinical MRI imaging scans.
+              </p>
+
+              <div class="project-problem-box">
+                <h4>Problem Solved</h4>
+                <p>Medical imaging diagnostics require automated triage systems that can quickly flag anomalies and assist radiological workflows.</p>
+              </div>
+
+              <ul class="project-features">
+                <li>Preprocessed MRI datasets using OpenCV for contrast enhancement and noise reduction.</li>
+                <li>Trained Convolutional Neural Network (CNN) architectures to classify distinct tumor classes.</li>
+                <li>Evaluated precision, recall, and confusion matrices for high medical diagnostic benchmark reliability.</li>
+              </ul>
+
+              <div class="project-tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">TensorFlow / Keras</span>
+                <span class="tech-badge">OpenCV</span>
+                <span class="tech-badge">Jupyter Notebook</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="https://github.com/shreedhardev/Brain-tumor-detection-and-classification" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-project-brain-repo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. EXPERIENCE & EDUCATION SECTION ────────────────────────────────── -->
     <section class="section" id="experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item" id="exp-lti">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Software Engineer</h3>
-                                <p class="company">LTI Mindtree</p>
-                            </div>
-                            <span class="timeline-date">Feb 2024 – Present</span>
-                        </div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Career Background</span>
+          <h2 class="section-title">Work Experience &amp; Education</h2>
+          <p class="section-desc">Track record of production enterprise software engineering and academic achievements.</p>
+        </div>
 
-                        <p class="timeline-project"><strong>Project:</strong> Insurance enterprise applications
-                            including customer quote issuance and internal employee systems for updating and rewriting
-                            insurance quotes, built using .NET, JavaScript, RESTful APIs, and microservices on cloud
-                            infrastructure.</p>
-
-                        <ul class="timeline-bullets">
-                            <li>Developed and enhanced multiple insurance applications, including customer-facing quote
-                                issuance and internal employee applications for updating and rewriting insurance quotes,
-                                using <strong>.NET</strong>, <strong>JavaScript</strong>, <strong>RESTful APIs</strong>,
-                                and <strong>microservices architecture</strong> to improve scalability and performance.
-                            </li>
-                            <li>Implemented <strong>CI/CD pipelines</strong> and automated cloud deployments using
-                                <strong>AWS</strong> and <strong>Terraform</strong>, improving deployment efficiency and
-                                application performance by <strong>80%</strong>, while collaborating in an Agile team on
-                                feature development and system enhancements.
-                            </li>
-                        </ul>
-
-                        <p class="timeline-role"><strong>Role:</strong> Developer responsible for
-                            feature development, enhancements, API implementation, and DevOps automation, collaborating
-                            with cross-functional Agile teams to improve system performance and deployment efficiency.
-                        </p>
-
-                        <div class="timeline-tech">
-                            <span class="tag tag-sm">.NET</span>
-                            <span class="tag tag-sm">JavaScript</span>
-                            <span class="tag tag-sm">RESTful APIs</span>
-                            <span class="tag tag-sm">AWS</span>
-                            <span class="tag tag-sm">Terraform</span>
-                            <span class="tag tag-sm">Microservices</span>
-                            <span class="tag tag-sm">CI/CD</span>
-                        </div>
+        <div class="experience-layout">
+          <!-- Work Experience Timeline -->
+          <div class="timeline reveal" id="timeline-section">
+            <div class="timeline-item" id="exp-ltimindtree">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="experience-card">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-role">Software Engineer</h3>
+                    <div class="exp-company">
+                      <span>LTI Mindtree</span>
+                      <span>·</span>
+                      <span class="exp-location">Full-time</span>
                     </div>
+                  </div>
+                  <span class="exp-period">Feb 2024 – Present</span>
                 </div>
+
+                <div class="exp-project-intro">
+                  <strong>Enterprise Domain:</strong> Large-scale insurance applications including customer-facing quote issuance and internal employee systems for managing, updating, and rewriting insurance policies.
+                </div>
+
+                <ul class="exp-bullets">
+                  <li>
+                    Engineered and enhanced customer-facing and internal insurance quote issuance systems using <strong>.NET</strong>, <strong>JavaScript</strong>, <strong>RESTful APIs</strong>, and <strong>microservices architecture</strong>, improving system throughput and scalability.
+                  </li>
+                  <li>
+                    Implemented <strong>automated CI/CD pipelines</strong> and cloud infrastructure provisioning using <strong>AWS</strong> and <strong>Terraform</strong>, reducing deployment cycles and boosting release efficiency by <strong>80%</strong>.
+                  </li>
+                  <li>
+                    Collaborated in cross-functional <strong>Agile Scrum teams</strong> on end-to-end feature delivery, API documentation, sprint retrospectives, and production bug triage.
+                  </li>
+                </ul>
+
+                <div class="exp-tags">
+                  <span class="tech-badge">.NET</span>
+                  <span class="tech-badge">C#</span>
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">RESTful APIs</span>
+                  <span class="tech-badge">Microservices</span>
+                  <span class="tech-badge">AWS</span>
+                  <span class="tech-badge">Terraform</span>
+                  <span class="tech-badge">CI/CD</span>
+                  <span class="tech-badge">Agile</span>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Education & Honors Column -->
+          <div class="side-column">
+            <!-- Education Card -->
+            <div class="side-block-card reveal" id="edu-card">
+              <h3>
+                <span>🎓</span>
+                <span>Education</span>
+              </h3>
+              <div class="edu-institution">PSG Institute of Technology and Applied Research</div>
+              <div class="edu-degree">Bachelor of Engineering in Electronics and Communication Engineering</div>
+              <div class="edu-meta-badges">
+                <span class="edu-badge edu-badge-highlight">CGPA: 8.63 / 10</span>
+                <span class="edu-badge">Class of 2024</span>
+                <span class="edu-badge">Coimbatore, India</span>
+              </div>
+            </div>
+
+            <!-- Honors & Achievements Card -->
+            <div class="side-block-card reveal" id="achievements-card">
+              <h3>
+                <span>🏆</span>
+                <span>Key Recognitions</span>
+              </h3>
+              <ul class="achievements-list">
+                <li class="achievement-item">
+                  <span class="achieve-icon-badge">✓</span>
+                  <div>Selected for the <strong>Parallels Technical Preview Team</strong> for early developer product testing.</div>
+                </li>
+                <li class="achievement-item">
+                  <span class="achieve-icon-badge">✓</span>
+                  <div>Served as <strong>Campus Ambassador</strong> for E-Cell at IIT Hyderabad, IIT Madras, and IIM Calcutta.</div>
+                </li>
+                <li class="achievement-item">
+                  <span class="achieve-icon-badge">✓</span>
+                  <div>Placed <strong>Top 30 globally</strong> in the Photocrowd Summer Vibes Contest (17,000+ international entries).</div>
+                </li>
+                <li class="achievement-item">
+                  <span class="achieve-icon-badge">✓</span>
+                  <div>Active technical contributor to the <strong>i-Tech Photographic Club</strong>, managing media coverage for the 3-day Hackfest.</div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ACHIEVEMENTS -->
-    <section class="section section-alt" id="achievements">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
-            <div class="achieve-grid">
-
-                <div class="achieve-card" id="ach-parallels">
-                    <div class="achieve-icon">🚀</div>
-                    <p>Selected for <strong>Parallels Technical Preview Team</strong> for early product testing.</p>
-                </div>
-
-                <div class="achieve-card" id="ach-ambassador">
-                    <div class="achieve-icon">🎤</div>
-                    <p><strong>Campus Ambassador</strong> for E-Cell at IIT Hyderabad, IIT Chennai, and IIM Calcutta.
-                    </p>
-                </div>
-
-                <div class="achieve-card" id="ach-photo">
-                    <div class="achieve-icon">📸</div>
-                    <p>Placed <strong>Top 30</strong> in Photocrowd Summer Vibes Contest (17,000+ global entries).</p>
-                </div>
-
-                <div class="achieve-card" id="ach-itech">
-                    <div class="achieve-icon">💻</div>
-                    <p>Active member of <strong>i-Tech Photographic Club</strong>, covered 3-day ITech Hackfest.</p>
-                </div>
-
-                <div class="achieve-card" id="ach-internship">
-                    <div class="achieve-icon">🏭</div>
-                    <p>Completed internships in <strong>Production Management</strong> and <strong>Marketing</strong>
-                        with hands-on exposure.</p>
-                </div>
-
-            </div>
+    <!-- ── 7. GITHUB & DEVELOPER ACTIVITY SECTION ───────────────────────────── -->
+    <section class="section section-alt" id="activity">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Developer Activity</span>
+          <h2 class="section-title">Code, Open Source &amp; Problem Solving</h2>
+          <p class="section-desc">Active developer engagement across public repositories, open-source initiatives, and algorithm challenges.</p>
         </div>
+
+        <div class="activity-box reveal">
+          <div class="activity-grid">
+            <div class="stat-card">
+              <div class="stat-number">11+</div>
+              <div class="stat-label">Public Repositories</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">80%</div>
+              <div class="stat-label">Deployment Efficiency Gain</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">8.63</div>
+              <div class="stat-label">Engineering CGPA</div>
+            </div>
+          </div>
+
+          <div class="activity-focus-list">
+            <div class="focus-item">
+              <div class="focus-item-left">
+                <span>⚡</span>
+                <span>Open Source Collaboration: <strong>kana-dojo</strong> &amp; <strong>good-first-issues</strong></span>
+              </div>
+              <span class="focus-tag">TypeScript &amp; Python</span>
+            </div>
+            <div class="focus-item">
+              <div class="focus-item-left">
+                <span>🧩</span>
+                <span>Data Structures &amp; Algorithms Practice on <strong>LeetCode (@shreenikkil)</strong></span>
+              </div>
+              <span class="focus-tag">Active Problem Solving</span>
+            </div>
+            <div class="focus-item">
+              <div class="focus-item-left">
+                <span>🤖</span>
+                <span>Exploring Agentic AI Frameworks (ReAct, LLM Tool Calling, Groq API)</span>
+              </div>
+              <span class="focus-tag">AI Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ── 8. CONTACT CTA SECTION ───────────────────────────────────────────── -->
     <section class="section" id="contact">
-        <div class="container contact-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-sub">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
-            <div class="contact-cards">
-                <a href="tel:+918072679578" class="contact-card" id="contact-phone">
-                    <span class="contact-icon">📞</span>
-                    <span>+91 8072679578</span>
-                </a>
-                <a href="mailto:shreenikkil@gmail.com" class="contact-card" id="contact-email">
-                    <span class="contact-icon">✉️</span>
-                    <span>shreenikkil@gmail.com</span>
-                </a>
-            </div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Have a role, project, or opportunity in mind?</h2>
+          <p class="section-desc">I’m always open to discussing new opportunities, full-stack roles, engineering challenges, or technical collaborations.</p>
         </div>
+
+        <div class="contact-grid">
+          <!-- Direct Contact Cards -->
+          <div class="contact-direct reveal">
+            <div class="contact-card-btn" id="card-email">
+              <div class="contact-card-icon">✉️</div>
+              <div class="contact-card-info">
+                <div class="contact-card-label">Email Address</div>
+                <div class="contact-card-value">shreenikkil@gmail.com</div>
+              </div>
+              <button class="copy-btn" id="copy-email-btn" type="button" aria-label="Copy email address to clipboard">
+                Copy
+              </button>
+            </div>
+
+            <a href="tel:+918072679578" class="contact-card-btn" id="card-phone">
+              <div class="contact-card-icon">📞</div>
+              <div class="contact-card-info">
+                <div class="contact-card-label">Direct Phone</div>
+                <div class="contact-card-value">+91 8072679578</div>
+              </div>
+              <span class="copy-btn">Call</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/shreedhar-g-d-967b26201/" target="_blank" rel="noopener noreferrer" class="contact-card-btn" id="card-linkedin">
+              <div class="contact-card-icon">🔗</div>
+              <div class="contact-card-info">
+                <div class="contact-card-label">Professional Network</div>
+                <div class="contact-card-value">linkedin.com/in/shreedhar-g-d</div>
+              </div>
+              <span class="copy-btn">Connect</span>
+            </a>
+          </div>
+
+          <!-- Minimal Contact Form -->
+          <div class="contact-form-container reveal">
+            <form class="contact-form" id="portfolio-contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email-input" class="form-label">Your Email</label>
+                <input type="email" id="contact-email-input" name="email" class="form-input" placeholder="alex@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message / Opportunity Details</label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell me about your team, role, or project..." required></textarea>
+              </div>
+
+              <div class="form-feedback" id="form-feedback" role="status" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn-primary" id="btn-submit-message">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>Designed &amp; built by <strong>Shreedhar G D</strong> · 2024</p>
-    </footer>
+  <!-- ── 9. FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2>Shreedhar G D</h2>
+          <p class="footer-tagline">Junior Software Developer dedicated to building clean, maintainable, and high-performance software systems.</p>
+        </div>
 
-    <script src="script.js"></script>
+        <ul class="footer-links" aria-label="Footer quick links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="https://github.com/shreedhardev" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/shreedhar-g-d-967b26201/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://leetcode.com/u/shreenikkil/" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> Shreedhar G D. Built with modern, clean web standards.</p>
+        <a href="#hero" class="back-to-top" id="back-to-top-link">
+          <span>Back to top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
